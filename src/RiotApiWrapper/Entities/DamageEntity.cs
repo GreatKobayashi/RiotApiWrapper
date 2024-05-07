@@ -2,11 +2,44 @@
 {
     public class DamageEntity
     {
+        public DamageEntity(
+            int totalDamageDealt,
+            int damageDealtToBuildings,
+            int damageDealtToObjectives,
+            int damageDealtToTurrets,
+            int totalDamageDealtToChampions,
+            int selfMitigated, int magicDamageDealt, int magicDamageDealtToChampions, int magicDamageTaken, int physicalDamageDealt, int physicalDamageDealtToChampions, int physicalDamageTaken, int damageShieldedOnTeammates, int totalDamageTaken, int totalHeal, int totalUnitsHealed, int healsOnTeammates, int totalTimeCCDealt, int timeCCingOthers, int trueDamageDealt, int trueDamageDealtToChampions, int trueDamageTaken, int largestCriticalStrike)
+        {
+            TotalDamageDealt = totalDamageDealt;
+            DamageDealtToBuildings = damageDealtToBuildings;
+            DamageDealtToObjectives = damageDealtToObjectives;
+            DamageDealtToTurrets = damageDealtToTurrets;
+            TotalDamageDealtToChampions = totalDamageDealtToChampions;
+            SelfMitigated = selfMitigated;
+            MagicDamageDealt = magicDamageDealt;
+            MagicDamageDealtToChampions = magicDamageDealtToChampions;
+            MagicDamageTaken = magicDamageTaken;
+            PhysicalDamageDealt = physicalDamageDealt;
+            PhysicalDamageDealtToChampions = physicalDamageDealtToChampions;
+            PhysicalDamageTaken = physicalDamageTaken;
+            DamageShieldedOnTeammates = damageShieldedOnTeammates;
+            TotalDamageTaken = totalDamageTaken;
+            TotalHeal = totalHeal;
+            TotalUnitsHealed = totalUnitsHealed;
+            HealsOnTeammates = healsOnTeammates;
+            TotalTimeCCDealt = totalTimeCCDealt;
+            TimeCCingOthers = timeCCingOthers;
+            TrueDamageDealt = trueDamageDealt;
+            TrueDamageDealtToChampions = trueDamageDealtToChampions;
+            TrueDamageTaken = trueDamageTaken;
+            LargestCriticalStrike = largestCriticalStrike;
+        }
+
         public int TotalDamageDealt { get; private set; }
         public int DamageDealtToBuildings { get; private set; }
         public int DamageDealtToObjectives { get; private set; }
         public int DamageDealtToTurrets { get; private set; }
-        public int DamageDealtToChampions { get; private set; }
+        public int TotalDamageDealtToChampions { get; private set; }
         public int SelfMitigated { get; private set; }
         public int MagicDamageDealt { get; private set; }
         public int MagicDamageDealtToChampions { get; private set; }

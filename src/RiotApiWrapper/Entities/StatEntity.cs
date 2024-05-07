@@ -2,6 +2,19 @@
 {
     public class StatEntity
     {
+        public StatEntity(ChampionKillEntity championKill, ObjectKillEntity objectKill, DamageEntity damage, int deaths, int assists, int bountyLevel, int itemsPurchased, int longestTimeSpentLiving, int totalTimeSpentDead)
+        {
+            ChampionKill = championKill;
+            ObjectKill = objectKill;
+            Damage = damage;
+            Deaths = deaths;
+            Assists = assists;
+            BountyLevel = bountyLevel;
+            ItemsPurchased = itemsPurchased;
+            LongestTimeSpentLiving = longestTimeSpentLiving;
+            TotalTimeSpentDead = totalTimeSpentDead;
+        }
+
         public ChampionKillEntity ChampionKill { get; private set; }
         public ObjectKillEntity ObjectKill { get; private set; }
         public DamageEntity Damage { get; private set; }
