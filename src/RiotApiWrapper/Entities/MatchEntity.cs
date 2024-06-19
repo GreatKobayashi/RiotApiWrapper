@@ -1,4 +1,6 @@
-﻿namespace RiotApiWrapper.Entities
+﻿using RiotApiWrapper.Entities.Match;
+
+namespace RiotApiWrapper.Entities
 {
     public class MatchEntity
     {

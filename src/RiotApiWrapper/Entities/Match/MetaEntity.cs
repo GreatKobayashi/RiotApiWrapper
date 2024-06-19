@@ -1,6 +1,6 @@
 ﻿using RiotApiWrapper.Misc;
 
-namespace RiotApiWrapper.Entities
+namespace RiotApiWrapper.Entities.Match
 {
     public class MetaEntity
     {
@@ -10,7 +10,7 @@ namespace RiotApiWrapper.Entities
             string gameName,
             string endOfGameResult,
             string tournamentCode,
-            int gameId,
+            string matchId,
             DateTime gameCreationDate,
             DateTime gameStartDate,
             DateTime gameEndDate,
@@ -26,7 +26,7 @@ namespace RiotApiWrapper.Entities
             GameName = gameName;
             EndOfGameResult = endOfGameResult;
             TournamentCode = tournamentCode;
-            GameId = gameId;
+            MatchId = matchId;
             GameCreationDate = gameCreationDate;
             GameStartDate = gameStartDate;
             GameEndDate = gameEndDate;
@@ -43,7 +43,7 @@ namespace RiotApiWrapper.Entities
         public string GameName { get; private set; }
         public string EndOfGameResult { get; private set; }
         public string TournamentCode { get; private set; }
-        public int GameId { get; private set; }
+        public string MatchId { get; private set; }
         public DateTime GameCreationDate { get; private set; }
         public DateTime GameStartDate { get; private set; }
         public DateTime GameEndDate { get; private set; }

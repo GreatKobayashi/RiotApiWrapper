@@ -1,6 +1,6 @@
 ﻿using RiotApiWrapper.Misc;
 
-namespace RiotApiWrapper.Entities
+namespace RiotApiWrapper.Entities.Match
 {
     public class TeamEntity
     {

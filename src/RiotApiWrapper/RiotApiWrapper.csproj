@@ -4,6 +4,16 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Authors>Kobayashi Ryu</Authors>
+    <Description>Scrape from Riot Api and reconstruct the data. Just for LoL.</Description>
+    <PackageTags>LoL, Riot, LeagueOfLegends</PackageTags>
+    <AssemblyVersion>1.6.2.0</AssemblyVersion>
+    <Version>$(VersionPrefix)1.6.2</Version>
+    <Title>alpha</Title>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Logics\" />
+  </ItemGroup>
 
 </Project>

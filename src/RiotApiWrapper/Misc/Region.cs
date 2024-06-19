@@ -5,6 +5,7 @@ namespace RiotApiWrapper.Misc
     {
         Americas,
         Asia,
-        Europe
+        Europe,
+        SEA
     }
 }

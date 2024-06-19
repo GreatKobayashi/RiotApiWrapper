@@ -1,4 +1,4 @@
-﻿namespace RiotApiWrapper.Entities
+﻿namespace RiotApiWrapper.Entities.Match
 {
     public class VisionEntity
     {

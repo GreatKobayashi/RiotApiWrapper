@@ -1,6 +1,6 @@
 ﻿namespace RiotApiWrapper.Misc
 {
-    public enum SummonerSpel
+    public enum SummonerSpell
     {
         Cleanse = 1,
         Exhaust = 3,
@@ -14,10 +14,13 @@
         Barrier = 21,
         PoroRecall = 30,
         PoroThrow = 31,
-        Snowball = 32,
-        URFSnowball = 39,
+        Mark = 32,
+        URFMark = 39,
         UltBookPlaceholder = 54,
         UltBookSmitePlaceholder = 55,
+        PrimalSmiteRed = 1101,
+        PrimalSmiteBlue = 1102,
+        PrimalSmiteGreen = 1103,
         CherryFlash = 2202,
         Flee = 2201
     }

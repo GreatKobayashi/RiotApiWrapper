@@ -1,23 +1,13 @@
 ﻿namespace RiotApiWrapper.Exceptions
 {
-    public class RiotApiException : InternalException
+    public class RiotApiException : Exception
     {
-        public RiotApiException(InternalException internalException) : base(internalException.Message, internalException)
+        internal RiotApiException(string errorCause) : base(errorCause)
         {
-            ErrorCode = GetErrorCode(internalException);
         }
 
-        public string ErrorCode { get; private set; }
-
-        private string GetErrorCode(InternalException internalException)
+        internal RiotApiException(string errorCause, Exception innerException) : base(errorCause, innerException)
         {
-            switch (internalException.Message)
-            {
-                case "Response is null.":
-                    return "RequestError";
-            }
-
-            return "";
         }
     }
 }

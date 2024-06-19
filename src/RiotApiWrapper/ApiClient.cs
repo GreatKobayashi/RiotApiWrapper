@@ -1,6 +1,6 @@
 ﻿using RiotApiWrapper.Exceptions;
+using System.Net;
 using System.Net.Http.Json;
-using System.Text.Json;
 
 namespace RiotApiWrapper
 {
@@ -29,42 +29,30 @@ namespace RiotApiWrapper
             {
                 requestUrl += $"{query.Key}={query.Value}&";
             }
-            var response = await _client.GetFromJsonAsync<T>(requestUrl);
 
-            if (response != null)
+            try
             {
-                return response;
-            }
-            else
-            {
-                throw new InternalException("Response is null.");
-            }
-        }
+                var response = await _client.GetFromJsonAsync<T>(requestUrl);
 
-        public async Task GetTest(string url, Dictionary<string, string>? queries = null)
-        {
-            var requestUrl = url;
-            var formedQueries = (queries ?? []).Concat(_defaultQueries).ToDictionary(c => c.Key, c => c.Value);
-
-            requestUrl += "?";
-            foreach (var query in formedQueries)
-            {
-                requestUrl += $"{query.Key}={query.Value}&";
+                if (response != null)
+                {
+                    return response;
+                }
+                else
+                {
+                    throw new RiotApiException("Response is null.");
+                }
             }
-            var response = await _client.GetStringAsync(requestUrl);
-
-            var options = new JsonSerializerOptions
+            catch (HttpRequestException ex)
             {
-                PropertyNameCaseInsensitive = true
-            };
-            if (response != null)
-            {
-                var deserialised = JsonSerializer.Deserialize<Dictionary<string, object>>(response, options);
-                var test = JsonSerializer.Deserialize<Dictionary<string, object>>(deserialised?["metadata"].ToString(), options);
-            }
-            else
-            {
-                throw new InternalException("Response is null.");
+                switch (ex.StatusCode)
+                {
+                    case HttpStatusCode.Forbidden:
+                        throw new ApiClientException("Invalid Api key.");
+                    case HttpStatusCode.TooManyRequests:
+                        throw new ApiClientException("Over the request limit.");
+                }
+                throw new ApiClientException("Unknown error.", ex);
             }
         }
     }

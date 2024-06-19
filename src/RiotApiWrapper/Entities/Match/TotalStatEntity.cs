@@ -1,8 +1,8 @@
-﻿namespace RiotApiWrapper.Entities
+﻿namespace RiotApiWrapper.Entities.Match
 {
-    public class StatEntity
+    public class TotalStatEntity
     {
-        public StatEntity(ChampionKillEntity championKill, ObjectKillEntity objectKill, DamageEntity damage, int deaths, int assists, int bountyLevel, int itemsPurchased, int longestTimeSpentLiving, int totalTimeSpentDead)
+        public TotalStatEntity(ChampionKillEntity championKill, ObjectKillEntity objectKill, TotalDamageEntity damage, int deaths, int assists, int bountyLevel, int itemsPurchased, int longestTimeSpentLiving, int totalTimeSpentDead)
         {
             ChampionKill = championKill;
             ObjectKill = objectKill;
@@ -17,7 +17,7 @@
 
         public ChampionKillEntity ChampionKill { get; private set; }
         public ObjectKillEntity ObjectKill { get; private set; }
-        public DamageEntity Damage { get; private set; }
+        public TotalDamageEntity Damage { get; private set; }
         public int Deaths { get; private set; }
         public int Assists { get; private set; }
         public int BountyLevel { get; private set; }

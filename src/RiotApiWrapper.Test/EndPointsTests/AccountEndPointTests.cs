@@ -1,6 +1,6 @@
 ﻿using RiotApiWrapper.Misc;
 
-namespace RiotApiWrapper.Test
+namespace RiotApiWrapper.Test.EndPointsTests
 {
     [TestClass]
     public class AccountEndPointTests

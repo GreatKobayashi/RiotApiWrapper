@@ -1,14 +1,31 @@
-﻿namespace RiotApiWrapper.Entities
+﻿namespace RiotApiWrapper.Entities.Match
 {
-    public class DamageEntity
+    public class TotalDamageEntity
     {
-        public DamageEntity(
+        public TotalDamageEntity(
             int totalDamageDealt,
             int damageDealtToBuildings,
             int damageDealtToObjectives,
             int damageDealtToTurrets,
             int totalDamageDealtToChampions,
-            int selfMitigated, int magicDamageDealt, int magicDamageDealtToChampions, int magicDamageTaken, int physicalDamageDealt, int physicalDamageDealtToChampions, int physicalDamageTaken, int damageShieldedOnTeammates, int totalDamageTaken, int totalHeal, int totalUnitsHealed, int healsOnTeammates, int totalTimeCCDealt, int timeCCingOthers, int trueDamageDealt, int trueDamageDealtToChampions, int trueDamageTaken, int largestCriticalStrike)
+            int selfMitigated,
+            int magicDamageDealt,
+            int magicDamageDealtToChampions,
+            int magicDamageTaken,
+            int physicalDamageDealt,
+            int physicalDamageDealtToChampions,
+            int physicalDamageTaken,
+            int damageShieldedOnTeammates,
+            int totalDamageTaken,
+            int totalHeal,
+            int totalUnitsHealed,
+            int healsOnTeammates,
+            int timeCCDealt,
+            int ccScore,
+            int trueDamageDealt,
+            int trueDamageDealtToChampions,
+            int trueDamageTaken,
+            int largestCriticalStrike)
         {
             TotalDamageDealt = totalDamageDealt;
             DamageDealtToBuildings = damageDealtToBuildings;
@@ -27,8 +44,8 @@
             TotalHeal = totalHeal;
             TotalUnitsHealed = totalUnitsHealed;
             HealsOnTeammates = healsOnTeammates;
-            TotalTimeCCDealt = totalTimeCCDealt;
-            TimeCCingOthers = timeCCingOthers;
+            TimeCCDealt = new(0, 0, timeCCDealt);
+            CCScore = ccScore;
             TrueDamageDealt = trueDamageDealt;
             TrueDamageDealtToChampions = trueDamageDealtToChampions;
             TrueDamageTaken = trueDamageTaken;
@@ -52,8 +69,8 @@
         public int TotalHeal { get; private set; }
         public int TotalUnitsHealed { get; private set; }
         public int HealsOnTeammates { get; private set; }
-        public int TotalTimeCCDealt { get; private set; }
-        public int TimeCCingOthers { get; private set; }
+        public TimeSpan TimeCCDealt { get; private set; }
+        public int CCScore { get; private set; }
         public int TrueDamageDealt { get; private set; }
         public int TrueDamageDealtToChampions { get; private set; }
         public int TrueDamageTaken { get; private set; }

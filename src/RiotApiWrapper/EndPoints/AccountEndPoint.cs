@@ -3,18 +3,15 @@ using RiotApiWrapper.Misc;
 
 namespace RiotApiWrapper.EndPoints
 {
-    public class AccountEndPoint
+    public class AccountEndPoint : EndPoint
     {
-        private readonly ApiClient _apiClient;
-
-        public AccountEndPoint(ApiClient apiClient)
+        public AccountEndPoint(ApiClient apiClient) : base(apiClient)
         {
-            _apiClient = apiClient;
         }
 
         public async Task<AccountEntity> GetByGameIdAsync(Region region, string riotId, string tagLine)
         {
-            return await _apiClient.GetAsync<AccountEntity>(
+            return await ApiClient.GetAsync<AccountEntity>(
                 $"https://{region}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/{riotId}/{tagLine}");
         }
     }

@@ -1,6 +1,6 @@
 ﻿using RiotApiWrapper.Misc;
 
-namespace RiotApiWrapper.Entities
+namespace RiotApiWrapper.Entities.Match
 {
     public class ParticipantEntity
     {
@@ -13,15 +13,18 @@ namespace RiotApiWrapper.Entities
             int spentGold,
             Team team,
             Position position,
-            SummonerSpel summonerSpel1,
-            SummonerSpel summonerSpel2,
+            SummonerSpell summonerSpel1,
+            SummonerSpell summonerSpel2,
             bool win,
             bool afk,
             SummonerEntity summoner,
             PingCountEntity pingCount,
             ChampionEntity champion,
-            StatEntity stat,
-            List<int> itemIds)
+            TotalStatEntity stat,
+            CastEntity cast,
+            ArenaEntity arena,
+            List<int> itemIds,
+            int wardId)
         {
             Id = id;
             Placement = placement;
@@ -39,7 +42,10 @@ namespace RiotApiWrapper.Entities
             PingCount = pingCount;
             Champion = champion;
             Stat = stat;
+            Cast = cast;
+            Arena = arena;
             ItemIds = itemIds;
+            WardId = wardId;
         }
 
         public int Id { get; private set; }
@@ -50,14 +56,17 @@ namespace RiotApiWrapper.Entities
         public int SpentGold { get; private set; }
         public Team Team { get; private set; }
         public Position Position { get; private set; }
-        public SummonerSpel SummonerSpel1 { get; private set; }
-        public SummonerSpel SummonerSpel2 { get; private set; }
+        public SummonerSpell SummonerSpel1 { get; private set; }
+        public SummonerSpell SummonerSpel2 { get; private set; }
         public bool Win { get; private set; }
         public bool Afk { get; private set; }
         public SummonerEntity Summoner { get; private set; }
         public PingCountEntity PingCount { get; private set; }
         public ChampionEntity Champion { get; private set; }
-        public StatEntity Stat { get; private set; }
+        public TotalStatEntity Stat { get; private set; }
+        public CastEntity Cast { get; private set; }
+        public ArenaEntity Arena { get; private set; }
         public List<int> ItemIds { get; private set; }
+        public int WardId { get; private set; }
     }
 }
