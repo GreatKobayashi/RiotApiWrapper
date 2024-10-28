@@ -17,7 +17,7 @@ namespace RiotApiWrapper.Test.EndPointsTests
         }
 
         [TestMethod]
-        public async Task TestGetIdListAsyncOptions()
+        public async Task TestGetIdListAsyncWithOptions()
         {
             var jpTimeOffset = TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time").BaseUtcOffset;
             var startTime = new DateTimeOffset(2024, 4, 23, 13, 30, 30, jpTimeOffset);
