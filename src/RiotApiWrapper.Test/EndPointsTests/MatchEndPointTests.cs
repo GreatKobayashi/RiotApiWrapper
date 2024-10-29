@@ -1,5 +1,4 @@
-﻿using RiotApiWrapper.Entities.Match.MatchTimeLine.Events;
-using RiotApiWrapper.Misc;
+﻿using RiotApiWrapper.Misc;
 
 namespace RiotApiWrapper.Test.EndPointsTests
 {
@@ -54,7 +53,6 @@ namespace RiotApiWrapper.Test.EndPointsTests
         public async Task TestGetTimeLineAsync()
         {
             var timeLine = await _api.Match.GetTimeLineAsync(Region.Asia, TestUtility.MatchId);
-            var evolve = timeLine.LevelUpEvents.Where(x => x is SkillEvolveEventEntity).ToList();
         }
     }
 }

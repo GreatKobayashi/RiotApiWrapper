@@ -1,16 +1,16 @@
 ﻿using RiotApiWrapper.Entities.Common;
-using RiotApiWrapper.Entities.Match;
+using RiotApiWrapper.Entities.TimeLine;
 using System.Text.Json.Serialization;
 
 namespace RiotApiWrapper.Entities
 {
-    public class MatchEntity
+    public class TimelineEntity
     {
         public MetaEntity Metadata { get; private set; }
         public InfoEntity Info { get; private set; }
 
         [JsonConstructor]
-        public MatchEntity(MetaEntity metadata, InfoEntity info)
+        public TimelineEntity(MetaEntity metadata, InfoEntity info)
         {
             Metadata = metadata;
             Info = info;

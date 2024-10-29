@@ -13,12 +13,12 @@ namespace RiotApiWrapper.Entities.Match
         public long GameCreation { get; private set; }
 
         /// <summary>
-        /// UnixMillSecond
+        /// UnixMilliseconds
         /// </summary>
         public int GameDuration { get; private set; }
 
         /// <summary>
-        /// UnixMillSecond
+        /// UnixMilliseconds
         /// </summary>
         public long GameEndTimestamp { get; private set; }
 
@@ -27,7 +27,7 @@ namespace RiotApiWrapper.Entities.Match
         public string GameName { get; private set; }
 
         /// <summary>
-        /// UnixMillSecond
+        /// UnixMilliseconds
         /// </summary>
         public long GameStartTimestamp { get; private set; }
 
