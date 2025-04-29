@@ -10,7 +10,7 @@ namespace RiotApiWrapper.Test.EndPointsTests
         [TestMethod]
         public async Task TestGetListAsync()
         {
-            var actualMatchList = await _api.Match.GetIdListAsync(Region.Asia, TestUtility.PuuId);
+            var actualMatchList = await _api.Match.GetIdsAsync(Region.Asia, TestUtility.PuuId);
 
             Assert.AreEqual(20, actualMatchList.Count);
         }
@@ -21,10 +21,10 @@ namespace RiotApiWrapper.Test.EndPointsTests
             var jpTimeOffset = TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time").BaseUtcOffset;
             var startTime = new DateTimeOffset(2024, 4, 23, 13, 30, 30, jpTimeOffset);
             var endTime = new DateTimeOffset(2024, 4, 25, 23, 30, 30, jpTimeOffset);
-            var actualMatchList1 = await _api.Match.GetIdListAsync(Region.Asia, TestUtility.PuuId, startTime, endTime, QueueType.RankedSolo, 0, 10);
+            var actualMatchList1 = await _api.Match.GetIdsAsync(Region.Asia, TestUtility.PuuId, startTime, endTime, QueueType.RankedSolo, 0, 10);
             Assert.AreEqual(7, actualMatchList1.Count);
 
-            var actualMatchList2 = await _api.Match.GetIdListAsync(Region.Asia, TestUtility.PuuId, null, endTime, QueueType.RankedSolo, 0, 10);
+            var actualMatchList2 = await _api.Match.GetIdsAsync(Region.Asia, TestUtility.PuuId, null, endTime, QueueType.RankedSolo, 0, 10);
             Assert.AreEqual(10, actualMatchList2.Count);
         }
 
@@ -40,7 +40,7 @@ namespace RiotApiWrapper.Test.EndPointsTests
             var offset = 0;
             for (var i = 0; i < 100; i++)
             {
-                var matchList = await _api.Match.GetIdListAsync(Region.Asia, TestUtility.PuuId, null, null, null, offset);
+                var matchList = await _api.Match.GetIdsAsync(Region.Asia, TestUtility.PuuId, null, null, null, offset);
                 foreach (var matchId in matchList)
                 {
                     var match = await _api.Match.GetInfoAsync(Region.Asia, matchId);
@@ -52,7 +52,7 @@ namespace RiotApiWrapper.Test.EndPointsTests
         [TestMethod]
         public async Task TestGetTimeLineAsync()
         {
-            var timeLine = await _api.Match.GetTimeLineAsync(Region.Asia, TestUtility.MatchId);
+            var timeLine = await _api.Match.GetTimeLineAsync(Region.Asia, "JP1_501254434");
         }
     }
 }

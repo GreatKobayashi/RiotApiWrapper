@@ -3,9 +3,9 @@ using RiotApiWrapper.Misc;
 
 namespace RiotApiWrapper.EndPoints
 {
-    public class AccountEndPoint : EndPoint
+    public class AccountEndPoint : EndPointBase
     {
-        public AccountEndPoint(ApiClient apiClient) : base(apiClient)
+        internal AccountEndPoint(ApiClient apiClient) : base(apiClient)
         {
         }
 

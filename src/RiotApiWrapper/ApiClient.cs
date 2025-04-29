@@ -4,7 +4,7 @@ using System.Net.Http.Json;
 
 namespace RiotApiWrapper
 {
-    public class ApiClient
+    internal class ApiClient
     {
         private HttpClient _client = new();
         private readonly string _apiKey;

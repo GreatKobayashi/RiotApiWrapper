@@ -4,13 +4,13 @@ using RiotApiWrapper.Misc;
 
 namespace RiotApiWrapper.EndPoints
 {
-    public class MatchEndPoint : EndPoint
+    public class MatchEndPoint : EndPointBase
     {
-        public MatchEndPoint(ApiClient apiClient) : base(apiClient)
+        internal MatchEndPoint(ApiClient apiClient) : base(apiClient)
         {
         }
 
-        public async Task<List<string>> GetIdListAsync(
+        public async Task<List<string>> GetIdsAsync(
             Region region,
             string puuId,
             DateTimeOffset? startTime = null,
@@ -30,11 +30,11 @@ namespace RiotApiWrapper.EndPoints
                 endTimeLong = ((DateTimeOffset)endTime).ToUnixTimeSeconds();
             }
 
-            return await GetIdListAsync(
+            return await GetIdsAsync(
                 region, puuId, startTimeLong, endTimeLong, queue, start, count);
         }
 
-        private async Task<List<string>> GetIdListAsync(
+        private async Task<List<string>> GetIdsAsync(
             Region region,
             string puuId,
             long? startTime,

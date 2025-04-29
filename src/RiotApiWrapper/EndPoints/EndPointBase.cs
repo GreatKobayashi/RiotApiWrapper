@@ -2,14 +2,14 @@
 
 namespace RiotApiWrapper.EndPoints
 {
-    public abstract class EndPoint
+    public abstract class EndPointBase
     {
-        public EndPoint(ApiClient apiClient)
+        internal EndPointBase(ApiClient apiClient)
         {
             ApiClient = apiClient;
         }
 
-        protected readonly ApiClient ApiClient;
+        private protected readonly ApiClient ApiClient;
         protected static readonly JsonSerializerOptions Options = new JsonSerializerOptions
         {
             PropertyNameCaseInsensitive = true

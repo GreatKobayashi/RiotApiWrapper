@@ -15,11 +15,13 @@ namespace RiotApiWrapper.Entities.TimeLine.Info.Frame.Event
 
         /// <summary>
         /// ""(Empty) -> Damage by item or rune
+        /// "burning" -> Red buff
         /// </summary>
         public string SpellName { get; private set; }
 
         /// <summary>
-        /// "-1" -> Damage by item or rune
+        /// "-1" -> Damage by item or rune or red buff
+        /// "64" -> AA
         /// </summary>
         public int SpellSlot { get; private set; }
         public int TrueDamage { get; private set; }
