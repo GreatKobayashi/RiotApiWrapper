@@ -5,8 +5,6 @@ namespace RiotApiWrapper.Test.EndPointsTests
     [TestClass]
     public class SummonerEndPointTests
     {
-        private static readonly RiotApi _api = new RiotApi(TestUtility.ApiKey);
-
         [TestMethod]
         public async Task TestGetAccountByGameIdAsync()
         {
