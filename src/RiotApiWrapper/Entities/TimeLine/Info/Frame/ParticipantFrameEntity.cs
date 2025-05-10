@@ -1,25 +1,10 @@
 ﻿using RiotApiWrapper.Entities.Common;
 using RiotApiWrapper.Entities.TimeLine.Info.Frame.ParticipantFrame;
-using System.Text.Json.Serialization;
 
 namespace RiotApiWrapper.Entities.TimeLine.Info.Frame
 {
     public class ParticipantFrameEntity
     {
-        public ChampionStatsEntity ChampionStats { get; private set; }
-        public int CurrentGold { get; private set; }
-        public DamageStatsEntity DamageStats { get; private set; }
-        public int GoldPerSecond { get; private set; }
-        public int JungleMinionsKilled { get; private set; }
-        public int Level { get; private set; }
-        public int MinionsKilled { get; private set; }
-        public int ParticipantId { get; private set; }
-        public PositionEntity Position { get; private set; }
-        public int TimeEnemySpentControlled { get; private set; }
-        public int TotalGold { get; private set; }
-        public int Xp { get; private set; }
-
-        [JsonConstructor]
         public ParticipantFrameEntity(
             ChampionStatsEntity championStats,
             int currentGold,
@@ -47,5 +32,18 @@ namespace RiotApiWrapper.Entities.TimeLine.Info.Frame
             TotalGold = totalGold;
             Xp = xp;
         }
+
+        public ChampionStatsEntity ChampionStats { get; private set; }
+        public int CurrentGold { get; private set; }
+        public DamageStatsEntity DamageStats { get; private set; }
+        public int GoldPerSecond { get; private set; }
+        public int JungleMinionsKilled { get; private set; }
+        public int Level { get; private set; }
+        public int MinionsKilled { get; private set; }
+        public int ParticipantId { get; private set; }
+        public PositionEntity Position { get; private set; }
+        public int TimeEnemySpentControlled { get; private set; }
+        public int TotalGold { get; private set; }
+        public int Xp { get; private set; }
     }
 }

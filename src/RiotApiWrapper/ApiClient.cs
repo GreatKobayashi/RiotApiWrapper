@@ -10,7 +10,7 @@ namespace RiotApiWrapper
         private readonly string _apiKey;
         private readonly Dictionary<string, string> _defaultQueries;
 
-        public ApiClient(string apiKey)
+        internal ApiClient(string apiKey)
         {
             _apiKey = apiKey;
             _defaultQueries = new()
@@ -19,7 +19,7 @@ namespace RiotApiWrapper
             };
         }
 
-        public async Task<T> GetAsync<T>(string url, Dictionary<string, string>? queries = null)
+        internal async Task<T> GetAsync<T>(string url, Dictionary<string, string>? queries = null)
         {
             var requestUrl = url;
             var formedQueries = (queries ?? []).Concat(_defaultQueries).ToDictionary(c => c.Key, c => c.Value);
@@ -47,6 +47,12 @@ namespace RiotApiWrapper
             {
                 switch (ex.StatusCode)
                 {
+                    case HttpStatusCode.BadRequest:
+                        if (ex.Message == "Unknown apikey")
+                        {
+                            throw new ApiClientException("Unknown Api key. It will be activated a few minutes after the Api key regeneration");
+                        }
+                        break;
                     case HttpStatusCode.Forbidden:
                         throw new ApiClientException("Invalid Api key.");
                     case HttpStatusCode.TooManyRequests:

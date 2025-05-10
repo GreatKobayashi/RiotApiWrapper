@@ -2,19 +2,6 @@
 {
     public class DamageStatsEntity
     {
-        public int MagicDamageDone { get; private set; }
-        public int MagicDamageDoneToChampions { get; private set; }
-        public int MagicDamageTaken { get; private set; }
-        public int PhysicalDamageDone { get; private set; }
-        public int PhysicalDamageDoneToChampions { get; private set; }
-        public int PhysicalDamageTaken { get; private set; }
-        public int TotalDamageDone { get; private set; }
-        public int TotalDamageDoneToChampions { get; private set; }
-        public int TotalDamageTaken { get; private set; }
-        public int TrueDamageDone { get; private set; }
-        public int TrueDamageDoneToChampions { get; private set; }
-        public int TrueDamageTaken { get; private set; }
-
         public DamageStatsEntity(
             int magicDamageDone,
             int magicDamageDoneToChampions,
@@ -42,5 +29,18 @@
             TrueDamageDoneToChampions = trueDamageDoneToChampions;
             TrueDamageTaken = trueDamageTaken;
         }
+
+        public int MagicDamageDone { get; private set; }
+        public int MagicDamageDoneToChampions { get; private set; }
+        public int MagicDamageTaken { get; private set; }
+        public int PhysicalDamageDone { get; private set; }
+        public int PhysicalDamageDoneToChampions { get; private set; }
+        public int PhysicalDamageTaken { get; private set; }
+        public int TotalDamageDone { get; private set; }
+        public int TotalDamageDoneToChampions { get; private set; }
+        public int TotalDamageTaken { get; private set; }
+        public int TrueDamageDone { get; private set; }
+        public int TrueDamageDoneToChampions { get; private set; }
+        public int TrueDamageTaken { get; private set; }
     }
 }

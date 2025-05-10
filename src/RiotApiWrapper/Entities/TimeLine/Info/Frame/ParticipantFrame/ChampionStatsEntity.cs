@@ -1,36 +1,7 @@
-﻿using System.Text.Json.Serialization;
-
-namespace RiotApiWrapper.Entities.TimeLine.Info.Frame.ParticipantFrame
+﻿namespace RiotApiWrapper.Entities.TimeLine.Info.Frame.ParticipantFrame
 {
     public class ChampionStatsEntity
     {
-        public int AbilityHaste { get; private set; }
-        public int AbilityPower { get; private set; }
-        public int Armor { get; private set; }
-        public int ArmorPen { get; private set; }
-        public int ArmorPenPercent { get; private set; }
-        public int AttackDamage { get; private set; }
-        public int AttackSpeed { get; private set; }
-        public int BonusArmorPenPercent { get; private set; }
-        public int BonusMagicPenPercent { get; private set; }
-        public int CcReduction { get; private set; }
-        public int CooldownReduction { get; private set; }
-        public int Health { get; private set; }
-        public int HealthMax { get; private set; }
-        public int HealthRegen { get; private set; }
-        public int Lifesteal { get; private set; }
-        public int MagicPen { get; private set; }
-        public int MagicPenPercent { get; private set; }
-        public int MagicResist { get; private set; }
-        public int MovementSpeed { get; private set; }
-        public int Omnivamp { get; private set; }
-        public int PhysicalVamp { get; private set; }
-        public int Power { get; private set; }
-        public int PowerMax { get; private set; }
-        public int PowerRegen { get; private set; }
-        public int SpellVamp { get; private set; }
-
-        [JsonConstructor]
         public ChampionStatsEntity(
             int abilityHaste,
             int abilityPower,
@@ -84,5 +55,31 @@ namespace RiotApiWrapper.Entities.TimeLine.Info.Frame.ParticipantFrame
             PowerRegen = powerRegen;
             SpellVamp = spellVamp;
         }
+
+        public int AbilityHaste { get; private set; }
+        public int AbilityPower { get; private set; }
+        public int Armor { get; private set; }
+        public int ArmorPen { get; private set; }
+        public int ArmorPenPercent { get; private set; }
+        public int AttackDamage { get; private set; }
+        public int AttackSpeed { get; private set; }
+        public int BonusArmorPenPercent { get; private set; }
+        public int BonusMagicPenPercent { get; private set; }
+        public int CcReduction { get; private set; }
+        public int CooldownReduction { get; private set; }
+        public int Health { get; private set; }
+        public int HealthMax { get; private set; }
+        public int HealthRegen { get; private set; }
+        public int Lifesteal { get; private set; }
+        public int MagicPen { get; private set; }
+        public int MagicPenPercent { get; private set; }
+        public int MagicResist { get; private set; }
+        public int MovementSpeed { get; private set; }
+        public int Omnivamp { get; private set; }
+        public int PhysicalVamp { get; private set; }
+        public int Power { get; private set; }
+        public int PowerMax { get; private set; }
+        public int PowerRegen { get; private set; }
+        public int SpellVamp { get; private set; }
     }
 }

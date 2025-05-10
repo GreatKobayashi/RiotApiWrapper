@@ -22,6 +22,8 @@ namespace RiotApiWrapper.Logics
             { Platform.VN2,  Region.SEA }
         };
 
+        private static readonly DateTime _unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
         public static Region GetRegionFromPlatform(Platform platform)
         {
             if (PlatformRegionPairs.TryGetValue(platform, out Region region))
@@ -32,6 +34,11 @@ namespace RiotApiWrapper.Logics
             {
                 throw new ArgumentException($"No matching region found for platform: {platform}");
             }
+        }
+
+        public static DateTime ConvertTimestampToDateTime(long timestamp)
+        {
+            return _unixEpoch.AddSeconds(timestamp / 1000).ToLocalTime();
         }
     }
 }

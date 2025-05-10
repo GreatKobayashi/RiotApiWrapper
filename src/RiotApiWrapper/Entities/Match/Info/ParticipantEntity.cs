@@ -1,222 +1,9 @@
 ﻿using RiotApiWrapper.Entities.Match.Info.Participant;
-using System.Text.Json.Serialization;
 
 namespace RiotApiWrapper.Entities.Match.Info
 {
     public class ParticipantEntity
     {
-        public int AllInPings { get; private set; }
-        public int AssistMePings { get; private set; }
-        public int Assists { get; private set; }
-        public int BaronKills { get; private set; }
-
-        /// <summary>
-        /// Blue Pings
-        /// </summary>
-        public int BasicPings { get; private set; }
-
-        /// <summary>
-        /// Max Bounty Level
-        /// </summary>
-        public int BountyLevel { get; private set; }
-
-        public Dictionary<string, object> Challenges { get; private set; }
-        public int ChampExperience { get; private set; }
-        public int ChampLevel { get; private set; }
-        public int ChampionId { get; private set; }
-        public string ChampionName { get; private set; }
-
-        /// <summary>
-        /// Only For Kayn's Transform
-        /// </summary>
-        public int ChampionTransform { get; private set; }
-
-        public int CommandPings { get; private set; }
-        public int ConsumablesPurchased { get; private set; }
-        public int DamageDealtToBuildings { get; private set; }
-        public int DamageDealtToObjectives { get; private set; }
-        public int DamageDealtToTurrets { get; private set; }
-        public int DamageSelfMitigated { get; private set; }
-        public int DangerPings { get; private set; }
-        public int Deaths { get; private set; }
-
-        /// <summary>
-        /// Controle Ward
-        /// </summary>
-        public int DetectorWardsPlaced { get; private set; }
-
-        public int DoubleKills { get; private set; }
-        public bool EligibleForProgression { get; private set; }
-        public int EnemyMissingPings { get; private set; }
-        public int EnemyVisionPings { get; private set; }
-        public bool FirstBloodAssist { get; private set; }
-        public bool FirstBloodKill { get; private set; }
-        public bool FirstTowerAssist { get; private set; }
-        public bool FirstTowerKill { get; private set; }
-
-        /// <summary>
-        /// Remake or Surrender pre minute 15 due to AFK
-        /// </summary>
-        public bool GameEndedInEarlySurrender { get; private set; }
-
-        public bool GameEndedInSurrender { get; private set; }
-        public int GetBackPings { get; private set; }
-        public int GoldEarned { get; private set; }
-        public int GoldSpent { get; private set; }
-        public int HoldPings { get; private set; }
-
-        /// <summary>
-        /// Both individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player. 
-        /// The individualPosition is the best guess for which position the player actually played in isolation of anything else. 
-        /// The teamPosition is the best guess for which position the player actually played if we add the constraint That each team must have one top player, one jungle, one middle, etc.
-        /// Generally the recommendation is to use the teamPosition field over the individualPosition field.
-        /// </summary>
-        public string IndividualPosition { get; private set; }
-        public int InhibitorKills { get; private set; }
-        public int InhibitorTakedowns { get; private set; }
-        public int InhibitorsLost { get; private set; }
-        public int Item0 { get; private set; }
-        public int Item1 { get; private set; }
-        public int Item2 { get; private set; }
-        public int Item3 { get; private set; }
-        public int Item4 { get; private set; }
-        public int Item5 { get; private set; }
-        public int Item6 { get; private set; }
-        public int ItemsPurchased { get; private set; }
-        public int KillingSprees { get; private set; }
-        public int Kills { get; private set; }
-        public int LargestCriticalStrike { get; private set; }
-        public int LargestKillingSpree { get; private set; }
-        public int LargestMultiKill { get; private set; }
-        public int LongestTimeSpentLiving { get; private set; }
-        public int MagicDamageDealt { get; private set; }
-        public int MagicDamageDealtToChampions { get; private set; }
-        public int MagicDamageTaken { get; private set; }
-        public int NeedVisionPings { get; private set; }
-        public int NeutralMinionsKilled { get; private set; }
-        public int NexusKills { get; private set; }
-        public int NexusLost { get; private set; }
-        public int NexusTakedowns { get; private set; }
-        public int ObjectivesStolen { get; private set; }
-        public int ObjectivesStolenAssists { get; private set; }
-        public int OnMyWayPings { get; private set; }
-        public int ParticipantId { get; private set; }
-        public int PentaKills { get; private set; }
-        public PerksEntity Perks { get; private set; }
-        public int PhysicalDamageDealt { get; private set; }
-        public int PhysicalDamageDealtToChampions { get; private set; }
-        public int PhysicalDamageTaken { get; private set; }
-        public int Placement { get; private set; }
-
-        /// <summary>
-        /// For Arena mode
-        /// </summary>
-        public int PlayerAugment1 { get; private set; }
-        /// <summary>
-        /// For Arena mode
-        /// </summary>
-        public int PlayerAugment2 { get; private set; }
-        /// <summary>
-        /// For Arena mode
-        /// </summary>
-        public int PlayerAugment3 { get; private set; }
-        /// <summary>
-        /// For Arena mode
-        /// </summary>
-        public int PlayerAugment4 { get; private set; }
-        /// <summary>
-        /// For Arena mode
-        /// </summary>
-        public int PlayerSubteamId { get; private set; }
-
-        public int ProfileIcon { get; private set; }
-        public int PushPings { get; private set; }
-        public string Puuid { get; private set; }
-        public int QuadraKills { get; private set; }
-        public string RiotIdGameName { get; private set; }
-        public string RiotIdTagline { get; private set; }
-        public int SightWardsBoughtInGame { get; private set; }
-        public int Spell1Casts { get; private set; }
-        public int Spell2Casts { get; private set; }
-        public int Spell3Casts { get; private set; }
-        public int Spell4Casts { get; private set; }
-
-        /// <summary>
-        /// For Arena mode
-        /// </summary>
-        public int SubteamPlacement { get; private set; }
-
-        public int Summoner1Casts { get; private set; }
-        public int Summoner1Id { get; private set; }
-        public int Summoner2Casts { get; private set; }
-        public int Summoner2Id { get; private set; }
-        public string SummonerId { get; private set; }
-        public int SummonerLevel { get; private set; }
-
-        /// <summary>
-        /// Remake or Surrender pre minute 15 due to AFK
-        /// </summary>
-        public bool TeamEarlySurrendered { get; private set; }
-
-        /// <summary>
-        /// 100 = Blue, 200 = Red
-        /// </summary>
-        public int TeamId { get; private set; }
-
-        /// <summary>
-        /// Both individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player. 
-        /// The individualPosition is the best guess for which position the player actually played in isolation of anything else. 
-        /// The teamPosition is the best guess for which position the player actually played if we add the constraint that each team must have one top player, one jungle, one middle, etc.
-        /// Generally the recommendation is to use the teamPosition field over the individualPosition field.
-        /// </summary>
-        public string TeamPosition { get; private set; }
-
-        /// <summary>
-        /// CC score that should account for cc mitigation
-        /// </summary>
-        public int TimeCCingOthers { get; private set; }
-
-        /// <summary>
-        /// If not AFK, equals game time
-        /// </summary>
-        public int TimePlayed { get; private set; }
-        public int TotalAllyJungleMinionsKilled { get; private set; }
-        public int TotalDamageDealt { get; private set; }
-        public int TotalDamageDealtToChampions { get; private set; }
-        public int TotalDamageShieldedOnTeammates { get; private set; }
-        public int TotalDamageTaken { get; private set; }
-        public int TotalEnemyJungleMinionsKilled { get; private set; }
-        public int TotalHeal { get; private set; }
-        public int TotalHealsOnTeammates { get; private set; }
-        public int TotalMinionsKilled { get; private set; }
-
-        /// <summary>
-        ///  Pre-mitigated duration of CC
-        /// </summary>
-        public int TotalTimeCCDealt { get; private set; }
-
-        public int TotalTimeSpentDead { get; private set; }
-        public int TotalUnitsHealed { get; private set; }
-        public int TripleKills { get; private set; }
-        public int TrueDamageDealt { get; private set; }
-        public int TrueDamageDealtToChampions { get; private set; }
-        public int TrueDamageTaken { get; private set; }
-        public int TurretKills { get; private set; }
-        public int TurretTakedowns { get; private set; }
-        public int TurretsLost { get; private set; }
-        public int VisionClearedPings { get; private set; }
-        public int VisionScore { get; private set; }
-
-        /// <summary>
-        /// Controle Ward
-        /// </summary>
-        public int VisionWardsBoughtInGame { get; private set; }
-
-        public int WardsKilled { get; private set; }
-        public int WardsPlaced { get; private set; }
-        public bool Win { get; private set; }
-
-        [JsonConstructor]
         public ParticipantEntity(
             int allInPings,
             int assistMePings,
@@ -468,5 +255,216 @@ namespace RiotApiWrapper.Entities.Match.Info
             WardsPlaced = wardsPlaced;
             Win = win;
         }
+
+        public int AllInPings { get; private set; }
+        public int AssistMePings { get; private set; }
+        public int Assists { get; private set; }
+        public int BaronKills { get; private set; }
+
+        /// <summary>
+        /// Blue Pings
+        /// </summary>
+        public int BasicPings { get; private set; }
+
+        /// <summary>
+        /// Max Bounty Level
+        /// </summary>
+        public int BountyLevel { get; private set; }
+
+        public Dictionary<string, object> Challenges { get; private set; }
+        public int ChampExperience { get; private set; }
+        public int ChampLevel { get; private set; }
+        public int ChampionId { get; private set; }
+        public string ChampionName { get; private set; }
+
+        /// <summary>
+        /// Only For Kayn's Transform
+        /// </summary>
+        public int ChampionTransform { get; private set; }
+
+        public int CommandPings { get; private set; }
+        public int ConsumablesPurchased { get; private set; }
+        public int DamageDealtToBuildings { get; private set; }
+        public int DamageDealtToObjectives { get; private set; }
+        public int DamageDealtToTurrets { get; private set; }
+        public int DamageSelfMitigated { get; private set; }
+        public int DangerPings { get; private set; }
+        public int Deaths { get; private set; }
+
+        /// <summary>
+        /// Controle Ward
+        /// </summary>
+        public int DetectorWardsPlaced { get; private set; }
+
+        public int DoubleKills { get; private set; }
+        public bool EligibleForProgression { get; private set; }
+        public int EnemyMissingPings { get; private set; }
+        public int EnemyVisionPings { get; private set; }
+        public bool FirstBloodAssist { get; private set; }
+        public bool FirstBloodKill { get; private set; }
+        public bool FirstTowerAssist { get; private set; }
+        public bool FirstTowerKill { get; private set; }
+
+        /// <summary>
+        /// Remake or Surrender pre minute 15 due to AFK
+        /// </summary>
+        public bool GameEndedInEarlySurrender { get; private set; }
+
+        public bool GameEndedInSurrender { get; private set; }
+        public int GetBackPings { get; private set; }
+        public int GoldEarned { get; private set; }
+        public int GoldSpent { get; private set; }
+        public int HoldPings { get; private set; }
+
+        /// <summary>
+        /// Both individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player. 
+        /// The individualPosition is the best guess for which position the player actually played in isolation of anything else. 
+        /// The teamPosition is the best guess for which position the player actually played if we add the constraint That each team must have one top player, one jungle, one middle, etc.
+        /// Generally the recommendation is to use the teamPosition field over the individualPosition field.
+        /// </summary>
+        public string IndividualPosition { get; private set; }
+        public int InhibitorKills { get; private set; }
+        public int InhibitorTakedowns { get; private set; }
+        public int InhibitorsLost { get; private set; }
+        public int Item0 { get; private set; }
+        public int Item1 { get; private set; }
+        public int Item2 { get; private set; }
+        public int Item3 { get; private set; }
+        public int Item4 { get; private set; }
+        public int Item5 { get; private set; }
+        public int Item6 { get; private set; }
+        public int ItemsPurchased { get; private set; }
+        public int KillingSprees { get; private set; }
+        public int Kills { get; private set; }
+        public int LargestCriticalStrike { get; private set; }
+        public int LargestKillingSpree { get; private set; }
+        public int LargestMultiKill { get; private set; }
+        public int LongestTimeSpentLiving { get; private set; }
+        public int MagicDamageDealt { get; private set; }
+        public int MagicDamageDealtToChampions { get; private set; }
+        public int MagicDamageTaken { get; private set; }
+        public int NeedVisionPings { get; private set; }
+        public int NeutralMinionsKilled { get; private set; }
+        public int NexusKills { get; private set; }
+        public int NexusLost { get; private set; }
+        public int NexusTakedowns { get; private set; }
+        public int ObjectivesStolen { get; private set; }
+        public int ObjectivesStolenAssists { get; private set; }
+        public int OnMyWayPings { get; private set; }
+        public int ParticipantId { get; private set; }
+        public int PentaKills { get; private set; }
+        public PerksEntity Perks { get; private set; }
+        public int PhysicalDamageDealt { get; private set; }
+        public int PhysicalDamageDealtToChampions { get; private set; }
+        public int PhysicalDamageTaken { get; private set; }
+        public int Placement { get; private set; }
+
+        /// <summary>
+        /// For Arena mode
+        /// </summary>
+        public int PlayerAugment1 { get; private set; }
+        /// <summary>
+        /// For Arena mode
+        /// </summary>
+        public int PlayerAugment2 { get; private set; }
+        /// <summary>
+        /// For Arena mode
+        /// </summary>
+        public int PlayerAugment3 { get; private set; }
+        /// <summary>
+        /// For Arena mode
+        /// </summary>
+        public int PlayerAugment4 { get; private set; }
+        /// <summary>
+        /// For Arena mode
+        /// </summary>
+        public int PlayerSubteamId { get; private set; }
+
+        public int ProfileIcon { get; private set; }
+        public int PushPings { get; private set; }
+        public string Puuid { get; private set; }
+        public int QuadraKills { get; private set; }
+        public string RiotIdGameName { get; private set; }
+        public string RiotIdTagline { get; private set; }
+        public int SightWardsBoughtInGame { get; private set; }
+        public int Spell1Casts { get; private set; }
+        public int Spell2Casts { get; private set; }
+        public int Spell3Casts { get; private set; }
+        public int Spell4Casts { get; private set; }
+
+        /// <summary>
+        /// For Arena mode
+        /// </summary>
+        public int SubteamPlacement { get; private set; }
+
+        public int Summoner1Casts { get; private set; }
+        public int Summoner1Id { get; private set; }
+        public int Summoner2Casts { get; private set; }
+        public int Summoner2Id { get; private set; }
+        public string SummonerId { get; private set; }
+        public int SummonerLevel { get; private set; }
+
+        /// <summary>
+        /// Remake or Surrender pre minute 15 due to AFK
+        /// </summary>
+        public bool TeamEarlySurrendered { get; private set; }
+
+        /// <summary>
+        /// 100 = Blue, 200 = Red
+        /// </summary>
+        public int TeamId { get; private set; }
+
+        /// <summary>
+        /// Both individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player. 
+        /// The individualPosition is the best guess for which position the player actually played in isolation of anything else. 
+        /// The teamPosition is the best guess for which position the player actually played if we add the constraint that each team must have one top player, one jungle, one middle, etc.
+        /// Generally the recommendation is to use the teamPosition field over the individualPosition field.
+        /// </summary>
+        public string TeamPosition { get; private set; }
+
+        /// <summary>
+        /// CC score that should account for cc mitigation
+        /// </summary>
+        public int TimeCCingOthers { get; private set; }
+
+        /// <summary>
+        /// If not AFK, equals game time
+        /// </summary>
+        public int TimePlayed { get; private set; }
+        public int TotalAllyJungleMinionsKilled { get; private set; }
+        public int TotalDamageDealt { get; private set; }
+        public int TotalDamageDealtToChampions { get; private set; }
+        public int TotalDamageShieldedOnTeammates { get; private set; }
+        public int TotalDamageTaken { get; private set; }
+        public int TotalEnemyJungleMinionsKilled { get; private set; }
+        public int TotalHeal { get; private set; }
+        public int TotalHealsOnTeammates { get; private set; }
+        public int TotalMinionsKilled { get; private set; }
+
+        /// <summary>
+        ///  Pre-mitigated duration of CC
+        /// </summary>
+        public int TotalTimeCCDealt { get; private set; }
+
+        public int TotalTimeSpentDead { get; private set; }
+        public int TotalUnitsHealed { get; private set; }
+        public int TripleKills { get; private set; }
+        public int TrueDamageDealt { get; private set; }
+        public int TrueDamageDealtToChampions { get; private set; }
+        public int TrueDamageTaken { get; private set; }
+        public int TurretKills { get; private set; }
+        public int TurretTakedowns { get; private set; }
+        public int TurretsLost { get; private set; }
+        public int VisionClearedPings { get; private set; }
+        public int VisionScore { get; private set; }
+
+        /// <summary>
+        /// Controle Ward
+        /// </summary>
+        public int VisionWardsBoughtInGame { get; private set; }
+
+        public int WardsKilled { get; private set; }
+        public int WardsPlaced { get; private set; }
+        public bool Win { get; private set; }
     }
 }
