@@ -1,4 +1,5 @@
-﻿using RiotApiWrapper.Misc;
+﻿using RiotApiWrapper.Exceptions;
+using RiotApiWrapper.Misc;
 
 namespace RiotApiWrapper.Test.EndPointsTests
 {
@@ -12,6 +13,22 @@ namespace RiotApiWrapper.Test.EndPointsTests
             var actualAccount = await api.Account.GetByGameIdAsync(Region.Asia, "GreatKobayashi", "JP1");
 
             Assert.AreEqual(TestUtility.PuuId, actualAccount.PuuId);
+        }
+
+        [TestMethod]
+        public async Task TestGetAccountByGameIdAsyncNotFound()
+        {
+            try
+            {
+                var api = new RiotApi(TestUtility.ApiKey);
+                var actualAccount = await api.Account.GetByGameIdAsync(Region.Asia, "rrr", "rrr");
+
+                Assert.Fail();
+            }
+            catch (RiotApiException ex)
+            {
+                Assert.AreEqual("Account Not Found.", ex.Message);
+            }
         }
     }
 }

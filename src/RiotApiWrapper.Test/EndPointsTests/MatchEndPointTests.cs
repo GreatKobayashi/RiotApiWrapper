@@ -1,4 +1,5 @@
-﻿using RiotApiWrapper.Misc;
+﻿using RiotApiWrapper.Exceptions;
+using RiotApiWrapper.Misc;
 
 namespace RiotApiWrapper.Test.EndPointsTests
 {
@@ -32,6 +33,21 @@ namespace RiotApiWrapper.Test.EndPointsTests
         public async Task TestGetInfoAsync()
         {
             var match = await _api.Match.GetInfoAsync(Region.Asia, TestUtility.MatchId);
+        }
+
+        [TestMethod]
+        public async Task TestGetInfoAsyncNotFound()
+        {
+            try
+            {
+                await _api.Match.GetInfoAsync(Region.Asia, "JP1_501254432");
+
+                Assert.Fail();
+            }
+            catch (RiotApiException ex)
+            {
+                Assert.AreEqual("Match Not Found.", ex.Message);
+            }
         }
 
         [TestMethod]

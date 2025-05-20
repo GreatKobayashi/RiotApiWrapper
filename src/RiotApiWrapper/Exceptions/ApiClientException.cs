@@ -11,7 +11,5 @@ namespace RiotApiWrapper.Exceptions
         internal ApiClientException(string errorCause, Exception innerException) : base(errorCause, innerException)
         {
         }
-
-        public HttpStatusCode? StatusCode => (InnerException as HttpRequestException)?.StatusCode;
     }
 }

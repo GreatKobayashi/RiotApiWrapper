@@ -1,6 +1,8 @@
 ﻿using RiotApiWrapper.Entities;
 using RiotApiWrapper.Exceptions;
 using RiotApiWrapper.Misc;
+using System.Diagnostics;
+using System.Net;
 
 namespace RiotApiWrapper.EndPoints
 {
@@ -64,7 +66,18 @@ namespace RiotApiWrapper.EndPoints
 
         public async Task<MatchEntity> GetInfoAsync(Region region, string matchId)
         {
-            return await ApiClient.GetAsync<MatchEntity>($"https://{region}.api.riotgames.com/lol/match/v5/matches/{matchId}");
+            try
+            {
+                return await ApiClient.GetAsync<MatchEntity>($"https://{region}.api.riotgames.com/lol/match/v5/matches/{matchId}");
+            }
+            catch (ApiClientException ex)
+            {
+                if (ex.HttpStatusCode == HttpStatusCode.NotFound)
+                {
+                    throw new RiotApiException("Match Not Found.", ex);
+                }
+                throw;
+            }
         }
 
         public async Task<TimelineEntity> GetTimeLineAsync(Region region, string matchId)
@@ -73,9 +86,13 @@ namespace RiotApiWrapper.EndPoints
             {
                 return await ApiClient.GetAsync<TimelineEntity>($"https://{region}.api.riotgames.com/lol/match/v5/matches/{matchId}/timeline");
             }
-            catch (RiotApiException ex)
+            catch (ApiClientException ex)
             {
-                throw new RiotApiException("Invalid matchId.", ex);
+                if (ex.HttpStatusCode == HttpStatusCode.NotFound)
+                {
+                    throw new RiotApiException("Match Not Found.", ex);
+                }
+                throw;
             }
         }
     }

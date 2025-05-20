@@ -20,7 +20,7 @@ namespace RiotApiWrapper.EndPoints
             }
             catch (ApiClientException ex)
             {
-                if (ex.StatusCode == HttpStatusCode.NotFound)
+                if (ex.HttpStatusCode == HttpStatusCode.NotFound)
                 {
                     throw new RiotApiException("Account Not Found.", ex);
                 }
