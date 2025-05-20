@@ -7,8 +7,8 @@
     <Authors>Kobayashi Ryu</Authors>
     <Description>Scrape from Riot Api and deserialize. Just for LoL.</Description>
     <PackageTags>LoL, Riot, LeagueOfLegends</PackageTags>
-    <AssemblyVersion>2.5.0.0</AssemblyVersion>
-    <Version>$(VersionPrefix)2.5.0</Version>
+    <AssemblyVersion>2.5.2</AssemblyVersion>
+    <Version>$(VersionPrefix)2.5.2</Version>
     <Title>beta</Title>
   </PropertyGroup>
 

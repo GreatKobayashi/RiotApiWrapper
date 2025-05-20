@@ -58,7 +58,7 @@ namespace RiotApiWrapper
                     case HttpStatusCode.TooManyRequests:
                         throw new ApiClientException("Over the request limit.");
                 }
-                throw new ApiClientException("Unknown error.", ex);
+                throw new ApiClientException(ex.Message, ex);
             }
         }
     }

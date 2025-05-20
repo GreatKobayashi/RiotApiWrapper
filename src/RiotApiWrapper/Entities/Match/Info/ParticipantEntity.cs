@@ -99,6 +99,7 @@ namespace RiotApiWrapper.Entities.Match.Info
             int summoner2Id,
             string summonerId,
             int summonerLevel,
+            string? summonerName,
             bool teamEarlySurrendered,
             int teamId,
             string teamPosition,
@@ -224,6 +225,7 @@ namespace RiotApiWrapper.Entities.Match.Info
             Summoner2Id = summoner2Id;
             SummonerId = summonerId;
             SummonerLevel = summonerLevel;
+            SummonerName = summonerName;
             TeamEarlySurrendered = teamEarlySurrendered;
             TeamId = teamId;
             TeamPosition = teamPosition;
@@ -260,28 +262,23 @@ namespace RiotApiWrapper.Entities.Match.Info
         public int AssistMePings { get; private set; }
         public int Assists { get; private set; }
         public int BaronKills { get; private set; }
-
         /// <summary>
         /// Blue Pings
         /// </summary>
         public int BasicPings { get; private set; }
-
         /// <summary>
         /// Max Bounty Level
         /// </summary>
         public int BountyLevel { get; private set; }
-
         public Dictionary<string, object> Challenges { get; private set; }
         public int ChampExperience { get; private set; }
         public int ChampLevel { get; private set; }
         public int ChampionId { get; private set; }
         public string ChampionName { get; private set; }
-
         /// <summary>
         /// Only For Kayn's Transform
         /// </summary>
         public int ChampionTransform { get; private set; }
-
         public int CommandPings { get; private set; }
         public int ConsumablesPurchased { get; private set; }
         public int DamageDealtToBuildings { get; private set; }
@@ -290,12 +287,10 @@ namespace RiotApiWrapper.Entities.Match.Info
         public int DamageSelfMitigated { get; private set; }
         public int DangerPings { get; private set; }
         public int Deaths { get; private set; }
-
         /// <summary>
         /// Controle Ward
         /// </summary>
         public int DetectorWardsPlaced { get; private set; }
-
         public int DoubleKills { get; private set; }
         public bool EligibleForProgression { get; private set; }
         public int EnemyMissingPings { get; private set; }
@@ -304,18 +299,15 @@ namespace RiotApiWrapper.Entities.Match.Info
         public bool FirstBloodKill { get; private set; }
         public bool FirstTowerAssist { get; private set; }
         public bool FirstTowerKill { get; private set; }
-
         /// <summary>
         /// Remake or Surrender pre minute 15 due to AFK
         /// </summary>
         public bool GameEndedInEarlySurrender { get; private set; }
-
         public bool GameEndedInSurrender { get; private set; }
         public int GetBackPings { get; private set; }
         public int GoldEarned { get; private set; }
         public int GoldSpent { get; private set; }
         public int HoldPings { get; private set; }
-
         /// <summary>
         /// Both individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player. 
         /// The individualPosition is the best guess for which position the player actually played in isolation of anything else. 
@@ -403,17 +395,18 @@ namespace RiotApiWrapper.Entities.Match.Info
         public int Summoner2Id { get; private set; }
         public string SummonerId { get; private set; }
         public int SummonerLevel { get; private set; }
-
+        /// <summary>
+        /// Old matches include.
+        /// </summary>
+        public string? SummonerName { get; private set; }
         /// <summary>
         /// Remake or Surrender pre minute 15 due to AFK
         /// </summary>
         public bool TeamEarlySurrendered { get; private set; }
-
         /// <summary>
         /// 100 = Blue, 200 = Red
         /// </summary>
         public int TeamId { get; private set; }
-
         /// <summary>
         /// Both individualPosition and teamPosition are computed by the game server and are different versions of the most likely position played by a player. 
         /// The individualPosition is the best guess for which position the player actually played in isolation of anything else. 
@@ -421,12 +414,10 @@ namespace RiotApiWrapper.Entities.Match.Info
         /// Generally the recommendation is to use the teamPosition field over the individualPosition field.
         /// </summary>
         public string TeamPosition { get; private set; }
-
         /// <summary>
         /// CC score that should account for cc mitigation
         /// </summary>
         public int TimeCCingOthers { get; private set; }
-
         /// <summary>
         /// If not AFK, equals game time
         /// </summary>
@@ -440,12 +431,10 @@ namespace RiotApiWrapper.Entities.Match.Info
         public int TotalHeal { get; private set; }
         public int TotalHealsOnTeammates { get; private set; }
         public int TotalMinionsKilled { get; private set; }
-
         /// <summary>
         ///  Pre-mitigated duration of CC
         /// </summary>
         public int TotalTimeCCDealt { get; private set; }
-
         public int TotalTimeSpentDead { get; private set; }
         public int TotalUnitsHealed { get; private set; }
         public int TripleKills { get; private set; }
@@ -457,12 +446,10 @@ namespace RiotApiWrapper.Entities.Match.Info
         public int TurretsLost { get; private set; }
         public int VisionClearedPings { get; private set; }
         public int VisionScore { get; private set; }
-
         /// <summary>
         /// Controle Ward
         /// </summary>
         public int VisionWardsBoughtInGame { get; private set; }
-
         public int WardsKilled { get; private set; }
         public int WardsPlaced { get; private set; }
         public bool Win { get; private set; }
