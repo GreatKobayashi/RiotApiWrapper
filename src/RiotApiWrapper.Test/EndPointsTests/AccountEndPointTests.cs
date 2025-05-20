@@ -21,7 +21,7 @@ namespace RiotApiWrapper.Test.EndPointsTests
             try
             {
                 var api = new RiotApi(TestUtility.ApiKey);
-                var actualAccount = await api.Account.GetByGameIdAsync(Region.Asia, "rrr", "rrr");
+                var actualAccount = await api.Account.GetByGameIdAsync(Region.Asia, "GreatKobayashi", "rrr");
 
                 Assert.Fail();
             }

@@ -12,6 +12,20 @@ namespace RiotApiWrapper.Exceptions
         {
         }
 
-        public HttpStatusCode? HttpStatusCode => (InnerException as HttpRequestException)?.StatusCode;
+        public HttpStatusCode? HttpStatusCode
+        {
+            get
+            {
+                if (InnerException is HttpRequestException httpException)
+                {
+                    return httpException.StatusCode;
+                }
+                else if (InnerException is RiotApiException riotException)
+                {
+                    return riotException.HttpStatusCode;
+                }
+                return null;
+            }
+        }
     }
 }
